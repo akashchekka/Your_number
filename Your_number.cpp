@@ -1,0 +1,111 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int o,a[15],b[5],c[5],d[5],i,k,q=3,p,r,x=0,y=0,z=0;
+	for(i=0;i<15;i++)
+	{
+		a[i]=i+1;
+	}
+	cout<<'\n'<<"Select a number in the range 1-15 and keep it in mind"<<'\n';
+	cout<<"Enter 1 to continue:";
+	cin>>o;
+	if(o==1)
+	{
+	while(q>0)
+	{
+		for(r=0;r<15;r++)
+		{
+			k=r%3;
+			if(k==0)
+			{
+				b[(x++)%5]=a[r];
+			}
+			else if(k==1)
+			{
+				c[(y++)%5]=a[r];
+			}
+			else
+			{
+				d[(z++)%5]=a[r];
+			}
+		}
+		cout<<'\t'<<"1.";
+		for(i=0;i<5;i++)
+		{
+			cout<<b[i]<<'\t';
+		}
+		cout<<'\n';
+		cout<<'\t'<<"2.";
+		for(i=0;i<5;i++)
+		{
+			cout<<c[i]<<'\t';
+		}
+		cout<<'\n';
+		cout<<'\t'<<"3.";
+		for(i=0;i<5;i++)
+		{
+			cout<<d[i]<<'\t';
+		}
+		cout<<'\n';
+		cout<<"Enter in which row the number in your mind is:"<<'\n';
+		cin>>p;
+		if(p==1)
+		{
+			a[0]=c[0];
+			a[1]=c[1];
+			a[2]=c[2];
+			a[3]=c[3];
+			a[4]=c[4];
+			a[5]=b[0];
+			a[6]=b[1];
+			a[7]=b[2];
+			a[8]=b[3];
+			a[9]=b[4];
+			a[10]=d[0];
+			a[11]=d[1];
+			a[12]=d[2];
+			a[13]=d[3];
+			a[14]=d[4];	
+		}
+		else if(p==2)
+		{
+			a[0]=d[0];
+			a[1]=d[1];
+			a[2]=d[2];
+			a[3]=d[3];
+			a[4]=d[4];
+			a[5]=c[0];
+			a[6]=c[1];
+			a[7]=c[2];
+			a[8]=c[3];
+			a[9]=c[4];
+			a[10]=b[0];
+			a[11]=b[1];
+			a[12]=b[2];
+			a[13]=b[3];
+			a[14]=b[4];
+		}
+		else
+		{
+			a[0]=b[0];
+			a[1]=b[1];
+			a[2]=b[2];
+			a[3]=b[3];
+			a[4]=b[4];
+			a[5]=d[0];
+			a[6]=d[1];
+			a[7]=d[2];
+			a[8]=d[3];
+			a[9]=d[4];
+			a[10]=c[0];
+			a[11]=c[1];
+			a[12]=c[2];
+			a[13]=c[3];
+			a[14]=c[4];
+		}
+		q--;	
+	}
+	}
+	cout<<"The number in your mind is:"<<a[7]<<endl;
+}
